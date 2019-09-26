@@ -16,6 +16,10 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
