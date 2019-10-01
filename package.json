@@ -12,7 +12,11 @@
     "dist"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +29,8 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-lodash-fp": "^2.2.0-a1",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
