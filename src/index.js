@@ -11,6 +11,10 @@ const welcomeGcd = () => {
 	console.log('Welcome to the Brain Games!');
 	console.log('Find the greatest common divisor of given numbers.');
 };
+const welcomeProgression = () => {
+	console.log('Welcome to the Brain Games!');
+	console.log('What number is missing in the progression?');
+};
 export const brainEvenGame = () => {
 	welcome();
 	console.log('');
@@ -155,4 +159,56 @@ export const brainGcdGame = () => {
 		};
 	};
 	roundsCalculate2();
+};
+export const brainProgressionGame = () => {
+	welcomeProgression();
+	console.log('');
+	const name = readlineSync.question('May I have your name?: ');
+	const greeting = () => {
+		console.log(`Hello, ${name}`);
+	};
+	greeting();
+	console.log('');
+	let firstResult = '';
+	let result = '';
+	let answer = '';
+	let i = '';
+	let rightAnswer = '';
+	let lastResult = '';
+	const question = () => {
+		const number1 = Math.floor(Math.random()*9) + 1;
+		const randomNumber = Math.floor(Math.random()*25) + 1;
+		firstResult = `${number1} ${number1 + 2} ${number1 + 4} ${number1 + 6} ${number1 + 8} ${number1 + 10} ${number1 + 12} ${number1 + 14} ${number1 + 16} ${number1 + 18}`;
+		result = `${number1} ${number1 + 2} ${number1 + 4} ${number1 + 6} ${number1 + 8} ${number1 + 10} ${number1 + 12} ${number1 + 14} ${number1 + 16} ${number1 + 18}`;
+		console.log(result);
+		const replace = (str, index, replacement) => {
+			return str.substr(0, index) + replacement + str.substr(index + replacement.length);
+		};
+		for (i = randomNumber; i < 25; i += 1) {
+			if (result[i] !== ' ' && result[i + 1] !== ' ') {
+			  	console.log(replace(result, i + 3, '..'));
+			  	rightAnswer = firstResult[i + 3] + firstResult[i + 4]; 
+				break;
+			};
+		}; 
+		answer = readlineSync.question('Your answer: ');
+		if (Number(answer) !== Number(rightAnswer)) {
+			lastResult = `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`;
+		}
+		if ((Number(answer) === Number(rightAnswer))) {
+			lastResult = 'Correct!';
+		};
+		console.log(lastResult);
+	};
+	const roundsCalculate = () => {
+		for (let i = 0; i !== 3; i++) {
+			question();                                                                                                             if (i === 2) {
+			console.log(`Congratulations, ${name}`);
+			}
+			if (lastResult !== 'Correct!') {
+				break;
+			};
+		};
+	};
+	roundsCalculate();
 };
