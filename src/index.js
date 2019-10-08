@@ -3,6 +3,10 @@ const welcome = () => {
 	          console.log('Welcome to the Brain Games!');
 	          console.log('Answer "yes" if number even otherwise answer "no".');
 };
+const welcomePrime = () => {
+	console.log('Welcome to the Brain Games!');
+	console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`);
+};
 const welcomeCalc = () => {
 	console.log('Welcome to the Brain Games!');
 	console.log('What is the result of the expression?');
@@ -208,6 +212,62 @@ export const brainProgressionGame = () => {
 			if (lastResult !== 'Correct!') {
 				break;
 			};
+		};
+	};
+	roundsCalculate();
+};
+export const brainPrimeGame = () => {
+	welcomePrime();
+	console.log('');
+	const name = readlineSync.question('May I have your name?: ');
+	const greeting = () => {
+		console.log(`Hello, ${name}`);
+	};
+	greeting();
+	console.log('');
+	let answer = '';
+	let quest = '';
+	let result = '';
+	let answ = '';
+	const question = () => {
+		const number = Math.floor(Math.random()*10) + 1;
+		quest = `Question: ${number}`;
+		console.log(quest);
+		answer = readlineSync.question('Your answer: ');
+		const isPrime = (n) => {
+			if (n === 1) {
+				return false;
+			}
+			for (let i = 2; i < n; i++) {
+					if (n % i === 0) {
+						return false;
+						break;
+					}
+			}
+			return true;
+		};
+		if (answer === 'yes' && isPrime(number) === true) {
+			answ = 'Correct!';
+		}
+		if (answer === 'yes' && isPrime(number) === false) {
+			answ = `'yes' is wrong answer :(. Correct answer is 'no'`; 
+		}
+		if (answer === 'no' && isPrime(number)  === false) {
+			answ = 'Correct!'; 
+		}
+		if (answer === 'no' && isPrime(number) === true) {
+			answ = `'no' is wrong answer :(. Correct answer is 'yes'`;
+		}
+		console.log(answ);
+	};
+	const roundsCalculate = () => {                                                                                                 for (let i = 0; i !== 3; i++) {
+			question();                                                                                     
+			if (answ !== 'Correct!') {
+				break;
+			}
+			if (i === 2) {
+				console.log(`Congratulations, ${name}`);
+			}
 		};
 	};
 	roundsCalculate();
