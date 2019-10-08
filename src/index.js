@@ -183,7 +183,7 @@ export const brainProgressionGame = () => {
 		const number1 = Math.floor(Math.random()*9) + 1;
 		const randomNumber = Math.floor(Math.random()*25) + 1;
 		firstResult = `${number1} ${number1 + 2} ${number1 + 4} ${number1 + 6} ${number1 + 8} ${number1 + 10} ${number1 + 12} ${number1 + 14} ${number1 + 16} ${number1 + 18}`;
-		result = `${number1} ${number1 + 2} ${number1 + 4} ${number1 + 6} ${number1 + 8} ${number1 + 10} ${number1 + 12} ${number1 + 14} ${number1 + 16} ${number1 + 18}`;
+		result = firstResult;
 		console.log(result);
 		const replace = (str, index, replacement) => {
 			return str.substr(0, index) + replacement + str.substr(index + replacement.length);
