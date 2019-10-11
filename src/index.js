@@ -260,7 +260,8 @@ export const brainPrimeGame = () => {
 		}
 		console.log(answ);
 	};
-	const roundsCalculate = () => {                                                                                                 for (let i = 0; i !== 3; i++) {
+	const roundsCalculate = () => {
+		for (let i = 0; i !== 3; i++) {
 			question();                                                                                     
 			if (answ !== 'Correct!') {
 				break;
