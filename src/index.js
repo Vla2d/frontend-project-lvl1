@@ -1,25 +1,9 @@
 import readlineSync from 'readline-sync';
-const welcome = () => {
-	          console.log('Welcome to the Brain Games!');
-	          console.log('Answer "yes" if number even otherwise answer "no".');
-};
-const welcomePrime = () => {
-	console.log('Welcome to the Brain Games!');
-	console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`);
-};
-const welcomeCalc = () => {
-	console.log('Welcome to the Brain Games!');
-	console.log('What is the result of the expression?');
-};
-const welcomeGcd = () => {
-	console.log('Welcome to the Brain Games!');
-	console.log('Find the greatest common divisor of given numbers.');
-};
-const welcomeProgression = () => {
-	console.log('Welcome to the Brain Games!');
-	console.log('What number is missing in the progression?');
-};
 export const brainEvenGame = () => {
+	const welcome = () => {
+		console.log('Welcome to the Brain Games!');
+		console.log('Answer "yes" if number even otherwise answer "no".');
+	};
 	welcome();
 	console.log('');
 	const name = readlineSync.question('May I have your name?: ');
@@ -61,6 +45,10 @@ export const brainEvenGame = () => {
 	roundsCalculate()
 };
 export const brainCalcGame = () => {
+	const welcomeCalc = () => {
+		console.log('Welcome to the Brain Games!');
+		console.log('What is the result of the expression?');
+	};
 	welcomeCalc();
 	console.log('');
 	const name = readlineSync.question('May I have your name?: ');
@@ -113,6 +101,10 @@ export const brainCalcGame = () => {
 	roundsCalculate1();
 };
 export const brainGcdGame = () => {
+	const welcomeGcd = () => {
+		console.log('Welcome to the Brain Games!');
+		console.log('Find the greatest common divisor of given numbers.');
+	};
 	welcomeGcd();
 	console.log('');
 	const name = readlineSync.question('May I have your name?: ');
@@ -165,6 +157,10 @@ export const brainGcdGame = () => {
 	roundsCalculate2();
 };
 export const brainProgressionGame = () => {
+	const welcomeProgression = () => {
+		console.log('Welcome to the Brain Games!');
+		console.log('What number is missing in the progression?');
+	};
 	welcomeProgression();
 	console.log('');
 	const name = readlineSync.question('May I have your name?: ');
@@ -206,7 +202,8 @@ export const brainProgressionGame = () => {
 	};
 	const roundsCalculate = () => {
 		for (let i = 0; i !== 3; i++) {
-			question();                                                                                                             if (i === 2) {
+			question(); 
+			if (i === 2) {
 			console.log(`Congratulations, ${name}`);
 			}
 			if (lastResult !== 'Correct!') {
@@ -217,6 +214,10 @@ export const brainProgressionGame = () => {
 	roundsCalculate();
 };
 export const brainPrimeGame = () => {
+	const welcomePrime = () => {
+		console.log('Welcome to the Brain Games!');
+		console.log(`Answer "yes" if given number is prime. Otherwise answer "no".`);
+	};
 	welcomePrime();
 	console.log('');
 	const name = readlineSync.question('May I have your name?: ');
