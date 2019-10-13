@@ -27,6 +27,7 @@
   "keywords": "brain games, hexlet",
   "dependencies": {
     "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
+    "@hexlet/pairs": "^1.0.10",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

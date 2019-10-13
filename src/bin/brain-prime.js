@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { brainPrimeGame } from '..';
+import prime from '../games/prime'
 
-brainPrimeGame();
+prime();
