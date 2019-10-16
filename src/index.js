@@ -6,24 +6,27 @@ const engine = (gameTask, getGameData, attemptsCount = 3) => {
 	console.log(`${gameTask}\n`);
 	const userName = readlineSync.question('May i have your name? ');
 	console.log(`Hello, ${userName}!\n`);
-	const iter = (counter) => {
-		const gameData = getGameData();
-		const gameQuestion = car(gameData);
-		console.log(`Question: ${gameQuestion}`);
-		const inputAnswer = readlineSync.question('Your answer: ');
-		const rightAnswer = cdr(gameData);
-		if (rightAnswer === inputAnswer && counter === attemptsCount) {
-			console.log(`Congratulations, ${userName}`);
-			return undefined;
+	const rounds = () => {
+		for (let i = 1; i !== attemptsCount + 1; i++) {
+			const gameData = getGameData();
+			const gameQuestion = car(gameData);
+			console.log(`Question: ${gameQuestion}`);
+			const inputAnswer = readlineSync.question('Your answer: ');
+			const rightAnswer = cdr(gameData);
+			if (i === attemptsCount && rightAnswer === inputAnswer) {
+				console.log('Correct!');
+				console.log(`Congratulations, ${userName}!`);
+				break;
+			}
+			if (rightAnswer === inputAnswer) {
+				console.log('Correct!');
+			}
+			if (rightAnswer !== inputAnswer) {
+				console.log(`"${inputAnswer}" is wrong answer. Correct answer was "${rightAnswer}".`);					console.log(`Let's try again, ${userName}!`);	
+				break;
+			}		
 		}
-		if (rightAnswer === inputAnswer) {
-			console.log('Correct!');
-			return iter(counter + 1);
-		}
-		console.log(`"${inputAnswer}" is wrong answer. Correct answer was "${rightAnswer}".`);
-		console.log(`Let's try again, ${userName}!`);
-		return undefined;
-	};
-	return iter(1);
+	}
+	rounds();
 };
 export default engine;

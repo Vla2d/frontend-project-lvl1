@@ -9,19 +9,22 @@ const getData = () => {
 	const second = getRandomInt(1, 10);
 	const operation = operations[getRandomInt(0, operations.length - 1)];
 	const getResult = (sign) => {
+		let quest;
 		switch (sign) {
 			case '-': {
-				return first - second;
-			}
+				quest = first - second;
+				return quest;
+			} 
 			case '+': {
-				return first + second;
+				quest = first + second;
+				return quest;
 			}
 			case '*': {
-				return first * second;
+				quest = first * second;
+				return quest;
 			}
 			default:
 		}
-		return undefined;
 	};
 	const gameQuestion = `${first} ${operation} ${second}`;
 	const rightAnswer = getResult(operation).toString();

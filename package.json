@@ -1,6 +1,6 @@
 {
   "name": "brain-games-project-for-hex",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "my first project - 'Brain Games'",
   "main": "",
   "scripts": {
@@ -26,11 +26,11 @@
   "license": "ISC",
   "keywords": "brain games, hexlet",
   "dependencies": {
-    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
     "@hexlet/pairs": "^1.0.10",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-pipeline-operator": "^7.5.0",
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",

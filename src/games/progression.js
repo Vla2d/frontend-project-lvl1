@@ -6,14 +6,14 @@ const gameTask = 'What number is missing in the progression?';
 const length = 10;
 const getQuestion = (start, step, hiddenElementPosition, progressionLength) => {
 	const iter = (counter, progressionMember, progression) => {
-		const addMember = (counter === hiddenElementPosition) ? '..' : `${progressionMember}`;
+		const member = (counter === hiddenElementPosition) ? '..' : `${progressionMember}`;
 		if (counter - 1 === progressionLength) {
 			return progression;
 		}
 		if (counter === 1) {
-			 return iter(counter + 1, progressionMember + step, addMember);
+			 return iter(counter + 1, progressionMember + step, member);
 		}
-		return iter(counter + 1, progressionMember + step, `${progression} ${addMember}`);
+		return iter(counter + 1, progressionMember + step, `${progression} ${member}`);
 	};
 	return iter(1, start, '');
 };
