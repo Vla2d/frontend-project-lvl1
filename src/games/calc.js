@@ -8,29 +8,29 @@ let first;
 let second;
 let operation;
 const randomGenerator = () => {
-	first = getRandomInt(1, 50);
-	second = getRandomInt(1, 10);
-	operation = operations[getRandomInt(0, operations.length - 1)];
+  first = getRandomInt(1, 50);
+  second = getRandomInt(1, 10);
+  operation = operations[getRandomInt(0, operations.length - 1)];
 };
 const getResult = (sign) => {
-	switch (sign) {
-		case '-': {
-			return first - second;
-		}
-		case '+': {
-			return first + second;
-		}
-		case '*': {
-			return first * second;
-		}
-		default:
-	}
+  switch (sign) {
+    case '-': {
+      return first - second;
+    }
+    case '+': {
+      return first + second;
+    }
+    case '*': {
+      return first * second;
+    }
+    default:
+  }
 };
 const getData = () => {
-	randomGenerator();
-	const gameQuestion = `${first} ${operation} ${second}`;
-	const rightAnswer = getResult(operation).toString();
-	return cons(gameQuestion, rightAnswer);
+  randomGenerator();
+  const gameQuestion = `${first} ${operation} ${second}`;
+  const rightAnswer = getResult(operation).toString();
+  return cons(gameQuestion, rightAnswer);
 };
 
 export default () => engine(gameTask, getData);
