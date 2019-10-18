@@ -25,6 +25,7 @@ const getResult = (sign) => {
     }
     default:
   }
+  return true;
 };
 const getData = () => {
   randomGenerator();

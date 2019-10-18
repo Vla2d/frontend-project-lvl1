@@ -4,8 +4,8 @@ module.exports = {
     ['@babel/preset-env',
       {
         targets: {
-	  node: 'current',
-	},
+          node: 'current',
+        },
       },
     ],
   ],
@@ -13,7 +13,7 @@ module.exports = {
     [
       '@babel/plugin-proposal-pipeline-operator',
       {
-	proposal: 'minimal',
+        proposal: 'minimal',
       },
     ],
   ],
