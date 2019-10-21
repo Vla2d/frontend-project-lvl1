@@ -4,6 +4,9 @@ import getRandomInt from '../common';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
   const iter = (divisior, number) => {
     if (divisior === number) {
       return true;
