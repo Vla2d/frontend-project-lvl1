@@ -4,15 +4,8 @@ import getRandomInt from '../common';
 
 const gameTask = 'What is the result of the expression?';
 const operations = '+-*';
-let first = getRandomInt(1, 50);
-let second = getRandomInt(1, 10);
-let operation = operations[getRandomInt(0, operations.length - 1)];
-const randomGenerator = () => {
-  first = getRandomInt(1, 50);
-  second = getRandomInt(1, 10);
-  operation = operations[getRandomInt(0, operations.length - 1)];
-};
-const getResult = (sign) => {
+
+const getResult = (first, second, sign) => {
   switch (sign) {
     case '-':
       return first - second;
@@ -28,9 +21,11 @@ const getResult = (sign) => {
   return false;
 };
 const getData = () => {
-  randomGenerator();
+  const first = getRandomInt(1, 50);
+  const second = getRandomInt(1, 10);
+  const operation = operations[getRandomInt(0, operations.length - 1)];
   const gameQuestion = `${first} ${operation} ${second}`;
-  const rightAnswer = getResult(operation).toString();
+  const rightAnswer = getResult(first, second, operation).toString();
   return cons(gameQuestion, rightAnswer);
 };
 

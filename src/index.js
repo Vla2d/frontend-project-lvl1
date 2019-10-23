@@ -14,17 +14,15 @@ const engine = (gameTask, getGameData) => {
     console.log(`Question: ${gameQuestion}`);
     const inputAnswer = readlineSync.question('Your answer: ');
     const rightAnswer = cdr(gameData);
-    if (i === attemptsCount) {
-      console.log(`Congratulations, ${userName}!`);
-    }
     if (rightAnswer === inputAnswer) {
       console.log('Correct!');
     }
     if (rightAnswer !== inputAnswer) {
       console.log(`"${inputAnswer}" is wrong answer. Correct answer was "${rightAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
-      break;
+      return;
     }
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 export default engine;

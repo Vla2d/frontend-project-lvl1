@@ -11,7 +11,7 @@ const getQuestion = (start, step, hiddenElementPosition, progressionLength) => {
       return progression;
     }
     if (counter === 0) {
-      return iter(counter + 2, progressionMember + step, member);
+      return iter(counter + 1, progressionMember + step, member);
     }
     return iter(counter + 1, progressionMember + step, `${progression} ${member}`);
   };
@@ -21,9 +21,9 @@ const getQuestion = (start, step, hiddenElementPosition, progressionLength) => {
 const getData = () => {
   const start = getRandomInt(1, 100);
   const step = getRandomInt(1, 20);
-  const hiddenElementPosition = getRandomInt(0, length);
+  const hiddenElementPosition = getRandomInt(0, length - 1);
   const gameQuestion = getQuestion(start, step, hiddenElementPosition, length);
-  const rightAnswer = (start + step * (hiddenElementPosition - 1)).toString();
+  const rightAnswer = (start + step * (hiddenElementPosition)).toString();
   return cons(gameQuestion, rightAnswer);
 };
 export default () => engine(gameTask, getData);
