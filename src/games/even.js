@@ -3,6 +3,7 @@ import engine from '..';
 import getRandomInt from '../common';
 
 const gameTask = 'Answer "yes" if number even otherwise answer "no".';
+
 const isEven = (num) => num % 2 === 0;
 
 const getData = () => {

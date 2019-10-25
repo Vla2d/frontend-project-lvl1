@@ -20,6 +20,7 @@ const getResult = (first, second, sign) => {
   }
   return false;
 };
+
 const getData = () => {
   const first = getRandomInt(1, 50);
   const second = getRandomInt(1, 10);

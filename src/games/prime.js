@@ -3,17 +3,17 @@ import engine from '..';
 import getRandomInt from '../common';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (num) => {
   if (num <= 1) {
     return false;
   }
-  const iter = (divisior, number) => {
-    if (divisior === number) {
-      return true;
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
+      return false;
     }
-    return ((num % divisior === 0) ? false : iter(divisior + 1, number));
-  };
-  return iter(2, num);
+  }
+  return true;
 };
 const getData = () => {
   const gameQuestion = getRandomInt(-10, 100);
